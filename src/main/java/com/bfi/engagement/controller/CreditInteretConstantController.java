@@ -3,10 +3,9 @@ package com.bfi.engagement.controller;
 import com.bfi.engagement.entities.CreditInteretConstant;
 import com.bfi.engagement.services.CreditInteretConstantService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/amortissementConstant")
@@ -19,4 +18,18 @@ public class CreditInteretConstantController {
         return creditInteretConstantService.getTableauArmotissement(creditInteretConstant);
     }
 
+    @RequestMapping (value = "/demandeCreditList", method = RequestMethod.GET)
+    public List<CreditInteretConstant> getDemandeCredit(){
+        return creditInteretConstantService.getallCredit();
+    }
+
+    @RequestMapping(value = "/accepterCredit/{id}", method = RequestMethod.PUT)
+    public CreditInteretConstant accepterCredit(@PathVariable(name = "id") Long id) {
+        return  creditInteretConstantService.accepterCredit(id);
+    }
+
+    @RequestMapping(value = "/refuserCredit/{id}", method = RequestMethod.PUT)
+    public CreditInteretConstant refuserCredit(@PathVariable(name = "id") Long id) {
+        return  creditInteretConstantService.refuserCredit(id);
+    }
 }

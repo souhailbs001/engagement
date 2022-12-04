@@ -1,6 +1,6 @@
 package com.bfi.engagement.entities;
 
-public enum StatutContrat {
+public enum StatutDemande {
     Created,
     Being_Processed,
     Validated,

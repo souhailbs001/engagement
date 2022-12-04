@@ -16,11 +16,11 @@ public class CreditInteretConstant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private double Emprunt;
+    private double emprunt;
     private double tauxInteret;
     private int duree;
     @Enumerated(EnumType.STRING)
-    private StatutContrat statut;
+    private StatutDemande statut;
     @OneToMany (mappedBy = "creditInteretConstant")
     private Collection<AmortissementConstant> amortissementConstants;
 

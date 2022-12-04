@@ -1,6 +1,5 @@
 package com.bfi.engagement.entities;
 
-import com.netflix.discovery.provider.ISerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +17,7 @@ import java.util.Date;
 public abstract class Contrat implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idContrat;
-    private StatutContrat statutContrat;
+    private StatutDemande statutDemande;
     private String reference;
     private boolean renevable;
     private Date startDate;

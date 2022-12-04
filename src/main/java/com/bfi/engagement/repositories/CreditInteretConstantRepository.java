@@ -9,4 +9,5 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface CreditInteretConstantRepository extends JpaRepository<CreditInteretConstant,Long> {
+
 }

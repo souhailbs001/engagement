@@ -9,7 +9,7 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface RdvRepository extends JpaRepository <Rdv,Long> {
-    public List<Rdv> findRdvsByStatutRdv(StatutRdv statutRdv);
-    public Rdv findRdvById(Long id);
+    List<Rdv> findRdvsByStatutRdv(StatutRdv statutRdv);
+    Rdv findRdvById(Long id);
 
 }

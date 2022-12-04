@@ -6,11 +6,11 @@ import java.text.ParseException;
 import java.util.List;
 
 public interface RdvService {
-    public Rdv saveRdv(Rdv rdVous);
-    public List<Rdv> rdVous();
-    public Rdv updateRdv(Long id , Rdv rdVous);
-    public Rdv accepterRdv(Long id);
-    public Rdv refuserRdv(Long id);
-    public Rdv annulerRdv(Long id);
-    public Rdv findRdvById(Long id);
+    Rdv saveRdv(Rdv rdVous);
+    List<Rdv> rdVous();
+    Rdv updateRdv(Long id, Rdv rdVous);
+    Rdv accepterRdv(Long id);
+    Rdv refuserRdv(Long id);
+    Rdv annulerRdv(Long id);
+    Rdv findRdvById(Long id);
 }

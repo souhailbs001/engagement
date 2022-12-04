@@ -13,7 +13,7 @@ import java.io.IOException;
 @Configuration
 public class CORSFilter extends CorsFilter {
     public CORSFilter(CorsConfigurationSource source) {
-        super((CorsConfigurationSource) source);
+        super(source);
     }
 
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)

@@ -28,6 +28,7 @@ public class RdvController {
     public List<Rdv> rdVous ()  {
         return  rdvService.rdVous();
     }
+
     @RequestMapping(value = "/annulerRdv/{id}", method = RequestMethod.PUT)
     public Rdv annulerRDV(@PathVariable(name = "id") Long id) {
         return  rdvService.annulerRdv(id);
