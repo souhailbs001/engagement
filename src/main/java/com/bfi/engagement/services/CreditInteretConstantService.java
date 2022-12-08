@@ -17,4 +17,7 @@ public interface CreditInteretConstantService {
     CreditInteretConstant refuserCredit(Long id);
 
 
+    CreditInteretConstant save(CreditInteretConstant creditInteretConstant);
+    String generateRefCredit ();
+
 }

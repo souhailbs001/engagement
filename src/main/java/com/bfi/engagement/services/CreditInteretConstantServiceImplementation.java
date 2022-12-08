@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 
 @Service
@@ -36,7 +38,7 @@ public class CreditInteretConstantServiceImplementation  implements  CreditInter
             }
         creditInteretConstant.setAmortissementConstants(amortissementConstants);
         creditInteretConstant.setStatut(StatutDemande.Being_Processed);
-        creditInteretConstantRepository.save(creditInteretConstant);
+        //creditInteretConstantRepository.save(creditInteretConstant);
         return creditInteretConstant;
     }
 
@@ -61,7 +63,9 @@ public class CreditInteretConstantServiceImplementation  implements  CreditInter
     @Override
     public CreditInteretConstant accepterCredit(Long id) {
         CreditInteretConstant credit =creditInteretConstantRepository.getById(id);
+        credit.setDateDebut(new Date());
         credit.setStatut(StatutDemande.Validated);
+        credit.setReference(generateRefCredit());
         return this.updateCredit(credit.getId(),credit);
     }
 
@@ -70,6 +74,26 @@ public class CreditInteretConstantServiceImplementation  implements  CreditInter
         CreditInteretConstant credit =creditInteretConstantRepository.getById(id);
         credit.setStatut(StatutDemande.Refused);
         return this.updateCredit(credit.getId(),credit);
+    }
+
+    @Override
+    public CreditInteretConstant save(CreditInteretConstant creditInteretConstant) {
+        creditInteretConstant.setMontantDu(creditInteretConstant.getEmprunt());
+        creditInteretConstant.setStatut(StatutDemande.Being_Processed);
+        return creditInteretConstantRepository.save(creditInteretConstant);
+    }
+
+    @Override
+    public String generateRefCredit() {
+        Random rand = new Random();
+        String card = "2022_12_A_";
+        for (int i = 0; i < 8; i++)
+        {
+            int n = rand.nextInt(10) + 0;
+            card += Integer.toString(n);
+        }
+        System.out.println(card);
+        return card;
     }
    /* @Override
     public CreditInteretConstant getTableauAmortissement(CreditInteretConstant creditInteretConstant) {

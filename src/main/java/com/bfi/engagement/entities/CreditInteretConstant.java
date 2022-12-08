@@ -7,6 +7,7 @@ import reactor.util.annotation.Nullable;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 @Data
@@ -19,6 +20,12 @@ public class CreditInteretConstant {
     private double emprunt;
     private double tauxInteret;
     private int duree;
+    private double montantPaye;
+    private double montantDu;
+    private double impayes;
+    private Date dateDebut;
+    private String reference;
+
     @Enumerated(EnumType.STRING)
     private StatutDemande statut;
     @OneToMany (mappedBy = "creditInteretConstant")

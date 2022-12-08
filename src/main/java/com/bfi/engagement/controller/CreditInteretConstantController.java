@@ -32,4 +32,16 @@ public class CreditInteretConstantController {
     public CreditInteretConstant refuserCredit(@PathVariable(name = "id") Long id) {
         return  creditInteretConstantService.refuserCredit(id);
     }
+
+    @RequestMapping (value = "/saveCreditInteretConstant", method = RequestMethod.POST)
+    public CreditInteretConstant saveCreditInteretConstant(@RequestBody CreditInteretConstant creditInteretConstant){
+        return creditInteretConstantService.save(creditInteretConstant);
+    }
+
+    @GetMapping ("/generateRefCredit")
+    public String generateNumCpt() {
+        return creditInteretConstantService.generateRefCredit();
+    }
+
+
 }
