@@ -52,10 +52,11 @@ public class EngagementApplication {
 		return args -> {
 
 			Rdv rdv1 = new Rdv(null, new Date() ,LocalTime.now(),LocalTime.now(),"1er rendez-vous", ObjetRdv.Transactions_caisse, StatutRdv.En_attente);
+			Rdv rdv2 = new Rdv(null, new Date() ,LocalTime.now(),LocalTime.now(),"2eme rendez-vous", ObjetRdv.Transactions_caisse, StatutRdv.Refusé);
 			//Rdv rdv2 = new Rdv(null,"2eme rendez-vous", new Date(), StatutRdv.En_attente,null);
 			//Rdv rdv3 = new Rdv(null,"3eme rendez-vous", new Date(), StatutRdv.En_attente,null);
 			rdvRepository.save(rdv1);
-			//rdvRepository.save(rdv2);
+			rdvRepository.save(rdv2);
 			//rdvRepository.save(rdv3);
 			CreditAuto creditAuto1 = new CreditAuto(null,"2018_09101_0000504_A_1_101",10000000,10000000,10000000,0,new Date(), 24);
 			creditAutoRepository.save(creditAuto1);

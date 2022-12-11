@@ -80,6 +80,7 @@ public class CreditInteretConstantServiceImplementation  implements  CreditInter
     public CreditInteretConstant save(CreditInteretConstant creditInteretConstant) {
         creditInteretConstant.setMontantDu(creditInteretConstant.getEmprunt());
         creditInteretConstant.setStatut(StatutDemande.Being_Processed);
+        //creditInteretConstant.setnumCpt()
         return creditInteretConstantRepository.save(creditInteretConstant);
     }
 

@@ -25,6 +25,9 @@ public class Rdv implements Serializable {
     private ObjetRdv objet;
     @Enumerated(EnumType.STRING)
     private StatutRdv statutRdv;
+    private Long idClient;
+    //@Transient
+    //private Client client;
 
 
 }
